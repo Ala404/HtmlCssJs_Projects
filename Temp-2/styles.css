@@ -1,0 +1,893 @@
+:root{
+    --main-color: #19c8fa;
+    --transperant-color:rgb(15 116 143 / 70%);
+    --main-padding:100px;
+}
+
+/*Globale Rules*/
+
+*{
+    
+    box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    
+
+}
+
+
+
+body {
+    
+    font-family: "Open Sans", sans-serif;
+    overflow-x: hidden; 
+    margin: 0;
+
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+/*Globale Rules*/
+                      /*header*/
+
+header .container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    min-height: 97px;
+    margin: 5px auto;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(15, 14, 14);
+    
+}
+
+header .container::after {
+
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    height: 1px;
+    z-index: -1;
+}
+
+
+header .logo img {
+    height: 2.5rem;
+}
+
+
+header nav   {
+
+   flex: 1;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .8em;
+  
+   
+}
+
+header #toggle-menu{
+    font-size: 2rem;
+    color: white;
+    position: relative;
+}
+
+@media (min-width:768px){
+    header nav #toggle-menu{
+       display: none;
+    }
+}
+
+
+header nav ul  {
+    display: flex; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+@media (max-width:767px){
+   
+    header nav ul   {
+    display: none;
+}
+
+}
+
+header nav #toggle-menu:hover + ul  {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+    opacity: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 10px;
+    z-index: 2;
+}
+
+
+header nav ul li a.active, .head-cont nav ul li a:hover {
+
+    color: var(--main-color);
+    border-bottom: 1px var(--main-color) solid ;
+}
+
+
+header nav ul a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 2rem .8em;
+    position: relative;
+    transition:.3s;
+
+}
+
+
+header #search-icon {
+
+    margin-left: .8rem;
+    color: white;
+    border-left: 1px white solid;
+    padding-left: 1rem;
+    font-size: 1.2em;
+    cursor: pointer;
+    position: relative;
+
+}
+
+
+
+/* header .search-bar {
+
+    padding: 0;
+    outline: 0;
+    border:1px  gray solid;
+    color: black;
+    width: 0rem;
+    height: 2rem;
+    border-radius: 5px;
+    display: none;
+    
+}
+
+header #search-icon:hover+.search-bar{
+
+    display: inline-flex;
+    transform: scaleX(1);
+    transition: all 0.5 ease-in-out ;
+    width: 10rem;
+
+   
+} */
+
+::placeholder{
+    color: gray;
+}
+
+
+
+                    /*head*/
+
+                /*landing SEc*/
+.landing {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("owl-night-wildlife-predatory-bird-strigiformes.jpg");
+    background-size: cover;
+    background-color: rgb(15, 14, 14);
+    
+
+    
+}
+
+.landing .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,50%);
+}
+
+.landing > .text {
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    background-color: var(--transperant-color);
+    font-size: 1.2em;
+    width: 50%;
+    transform: translateY(-50%);
+    padding: 1.5em;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    
+  
+}
+
+
+
+.landing .text .content{
+    max-width: 25em;
+}
+
+
+
+.landing .text .content h2 {
+    line-height: 1.5;
+    font-size:2rem ;
+    font-weight: normal;
+}
+
+.landing .text .content p {
+    line-height: 1.5;
+}
+
+.arrow-left {
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    left: 15px;
+    top: 43%;
+    cursor: pointer;
+}
+
+.arrow-right {
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    right: 15px;
+    top: 43%;
+    cursor: pointer;
+}
+
+@media (max-width:767px){
+    .landing > .text {width: 100%;}
+    .landing .text .content{
+        max-width: 100%;
+    }
+    .landing .arrow-left, .landing .arrow-right{
+        display: none;
+    }
+}
+
+.bullits {
+    width: 5rem;
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.bullits span {
+    
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    border:1px solid white;
+   
+}
+
+.active-bullit {
+
+    background-color: var(--main-color);
+}
+
+                /*News SEc*/
+
+                /*Services*/
+
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom:var(--main-padding) ;
+    
+   
+}
+
+.container {
+
+    margin:0 auto ;
+
+}
+
+.sec-heading {
+    width: 30rem;
+    margin:inherit ;
+    max-width: 100%;
+}
+
+  .hd{
+
+    font-weight: normal;
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+ .hd::before{
+
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    width: 7rem;
+    height: 2px;
+}
+
+ .hd::after{
+
+    content: "";
+    position: absolute;
+    bottom: -23px;
+    left: 58%;
+    transform: translateX(-50px);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px black solid;
+    background-color: white;
+}
+.hd-par {
+    width: 30rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    margin: 75px auto 100px;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+.services .srv-box i {
+    font-size: 45px;
+    margin-bottom: 15px;
+    margin-right: 30px;
+} 
+
+.services .srv-box h3 {
+
+    color: var(--main-color);
+} 
+
+.services .srv-box p {
+
+    font-size: 1.2rem;
+    color: #777;
+    line-height: 2;
+} 
+
+@media (min-width:767px) {
+    .services .servs-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+        grid-column-gap:50px;
+        grid-row-gap:25px;
+    }
+}
+
+@media (max-width:767px) {
+    .services .srv-box{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+
+/*Design*/
+
+.design {
+    padding-top: var(--main-padding);
+    padding-bottom:var(--main-padding) ;
+    background-image: url("time-travel-is-possible.jpg");
+    background-size: cover;
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.design::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,50%);
+}
+
+.design img{
+    position: absolute;
+    bottom: -150px;
+    left: 120px;
+}
+
+.design .info-card{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--transperant-color);
+    width: 50%;
+    padding: 35px 0 35px 70px ;
+    color: white;
+    
+}
+
+
+
+
+.design .info-card h3{
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-bottom:35px;
+}
+
+.design .info-card ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height:100% ;
+}
+
+.design .info-card li::before{
+
+    font-family: "Font Awesome 5 Free";
+    content: "\f108";
+    font-weight: 900;
+    margin-right: 20px;
+    position: relative;
+    top: 1px;
+}
+
+.design .info-card li{
+    margin-bottom: 15px;
+    line-height: 2;
+    
+    
+}
+
+
+@media (max-width:767px) {
+
+    .design img{display: none;}
+    .design .info-card {  width: 100%;}
+}
+
+
+/*Design*/
+
+/*Portfolio*/
+
+.portfolio {
+    padding-top: var(--main-padding);
+    padding-bottom:var(--main-padding) ;
+    position: relative;
+}
+
+.portfolio .shuffle{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    margin-bottom: 50px;
+    
+}
+
+.portfolio .shuffle li{
+    text-align: center;
+    text-transform: capitalize;
+    width: 3rem;
+    height: 3rem;
+    padding: .8rem;
+    cursor: pointer;
+
+}
+
+.portfolio .shuffle li.active{
+    color: white;
+    background-color:var(--main-color);
+    
+}
+
+.portfolio .content {
+
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    position: relative;
+    
+}
+
+.portfolio .content .cont-box {
+    
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.portfolio .content .cont-box img{
+    width: 100%;
+    transition: 0.3s;
+}
+
+.portfolio .content .cont-box .text {
+
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    padding: 20px 0 20px 20px;
+    background-color: white;
+    width: 100%;
+    transition: 0.3s;
+    
+
+}
+
+.portfolio .content .cont-box .text h4{
+
+    font-weight: normal;
+    font-size: 17px;
+    margin: 0;
+    line-height: 2;
+
+}
+
+.portfolio .content .cont-box .text p{
+    color: var(--main-color);
+    margin: 0;
+}
+
+.portfolio  a {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-color);
+    display: block;
+    padding: 15px;
+    text-transform: uppercase;
+    
+}
+
+
+.portfolio .content .cont-box:hover > .text {
+    bottom: 0;
+}
+
+.portfolio .content .cont-box:hover > img {
+    transform:  rotate(3deg) scale(1.1);
+}
+
+
+/*Portfolio*/
+
+/*S-Video*/
+
+.video-container {
+    position: relative;
+    margin-top: 100px;
+}
+
+.video-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,50%);
+
+}
+
+video{
+    
+    width: 100%;
+   
+}
+
+.video-container .text{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--transperant-color);
+    padding-top: 45px;
+    padding-bottom: 45px;
+    
+}
+
+.video-container .text h3{ font-weight: normal; color: white; margin: 0;}
+
+.video-container .text p{ color: white;}
+
+.video-container .text button{ 
+    background-color:var(--main-color) ;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    outline: none;
+    padding: 10px;
+    height: 40px;
+    border: none;
+    
+}
+
+
+/*E-Video*/
+
+
+/*S-ABout*/
+
+.about {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+    height: 700px;
+    overflow: hidden;
+}
+
+.about img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6rem;
+
+}
+
+@media (max-width:768px) {
+    .about img {
+        max-width: 100%;
+    }
+}
+
+/*E-ABout*/
+
+/*S-Stat*/
+
+.statistics {
+
+    height: 30rem;
+    width: 100%;
+    position: relative;
+    
+}
+
+@media (max-width:346px) {
+
+    .statistics {
+        height: 800px;
+    }
+
+}
+
+.statistics img{
+
+    background-size: auto;
+    position: relative;
+    max-height: 100%;
+    min-width: 100%;
+}
+
+.statistics img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,50%);
+
+}
+
+
+
+.statistics .content {
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--transperant-color);
+    width: 80%;
+    max-height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px 0 15px;
+}
+
+.statistics .stat-box {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.statistics .stat-box i { 
+    position: relative;
+    font-size: 1.5rem;
+    margin: 20px 0;
+    background-color: black;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding-top: 10px;
+    margin-inline: auto;
+}
+
+
+
+.statistics .stat-box h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+
+/*E-Stat*/
+
+/*S-Skills*/
+
+.skills {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    /* margin-inline: 20px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+    
+}
+.skills .testimonials-part {
+padding-inline: 5rem;
+
+}
+
+.skills .testimonials-part .text{
+
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.skills .testimonials-part .text h4{ font-weight: normal;}
+
+.skills .testimonials-part .text p{color: #777;}
+
+.skills .testimonials-part .account {
+    display: flex;
+    position: relative;
+}
+
+.skills .testimonials-part .account p:first-child{
+    flex: 1;
+   
+    
+}
+
+.skills .testimonials-part .account img{
+    margin-right: 40px; 
+    align-self: center;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.skills .testimonials-part .account p:last-child{
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    color: #777;
+}
+
+.skills .testimonials-part hr {
+
+    width: 70%;
+    margin-left: 30%;
+    
+
+}
+
+.skills .testimonials-part .account .bullits{
+    
+    margin-top: 50px;
+    width: 5rem;
+    display: flex;
+    gap: 2px;
+   
+}
+
+.skills .testimonials-part .account .bullits span{ 
+    width: 10px; height: 10px;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    border:1px solid black;
+
+}
+
+
+.skills .skills-part {
+    padding-inline: 5rem;
+}
+
+.skills .skills-part .text{
+
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.skills .skills-part h4 {
+    font-weight: normal;
+}
+
+.skills .skills-part p { color: #777;}
+
+.skills .skills-part .abobe {
+    
+    height: 20px;
+    background: linear-gradient(to right ,var(--main-color) 90%, #777 90%);
+}
+
+.skills .skills-part .html-css {
+    
+    height: 20px;
+    background: linear-gradient(to right ,var(--main-color) 85%, #777 85%);
+}
+
+.skills .skills-part .javascript {
+    
+    height: 20px;
+    background: linear-gradient(to right ,var(--main-color) 80%, #777 80%);
+}
+
+.skills .skills-part .python {
+    
+    height: 20px;
+    background: linear-gradient(to right ,var(--main-color) 90%, #777 90%);
+}
+
+
+/*E-Skills*/
