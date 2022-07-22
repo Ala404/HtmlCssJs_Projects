@@ -11,10 +11,7 @@
     box-sizing:border-box;
     -webkit-box-sizing: border-box;
     
-
 }
-
-
 
 body {
     
@@ -506,6 +503,7 @@ header #search-icon:hover+.search-bar{
     justify-content: center;
     list-style: none;
     margin: 0;
+    padding: 0;
     margin-bottom: 50px;
     
 }
@@ -529,9 +527,11 @@ header #search-icon:hover+.search-bar{
 .portfolio .content {
 
     width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    display: flex;
     position: relative;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 0.1rem;
     
 }
 
@@ -540,7 +540,30 @@ header #search-icon:hover+.search-bar{
     position: relative;
     overflow: hidden;
     transition: 0.3s;
+    flex:1 20%
+} 
+
+@media (max-width: 920px){
+    .portfolio .content .cont-box {
+    
+        flex-basis: 25%;
+    }
 }
+
+@media (max-width: 730px){
+    .portfolio .content .cont-box {
+    
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 600px){
+    .portfolio .content .cont-box {
+    
+        flex-basis: 50%;
+    }
+}
+
 
 .portfolio .content .cont-box img{
     width: 100%;
@@ -664,7 +687,7 @@ video{
 
 .about {
     padding-top: var(--main-padding);
-    padding-bottom: var(--main-padding);
+
     position: relative;
     height: 700px;
     overflow: hidden;
@@ -690,29 +713,15 @@ video{
 
 .statistics {
 
-    height: 30rem;
-    width: 100%;
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url("stats.png");
+    background-size: cover;
     position: relative;
     
 }
 
-@media (max-width:346px) {
-
-    .statistics {
-        height: 800px;
-    }
-
-}
-
-.statistics img{
-
-    background-size: auto;
-    position: relative;
-    max-height: 100%;
-    min-width: 100%;
-}
-
-.statistics img::before {
+.statistics::before {
     content: '';
     position: absolute;
     top: 0;
@@ -728,17 +737,16 @@ video{
 .statistics .content {
     
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     background-color: var(--transperant-color);
     width: 80%;
     max-height: 100%;
-    position: absolute;
+    position:relative;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    padding: 15px 0 15px;
+    transform: translateX(-50%);
+    padding: 0 0 15px;
 }
 
 .statistics .stat-box {
@@ -746,7 +754,22 @@ video{
     flex-direction: column;
     color: white;
     text-align: center;
+    flex-basis: 25%;
+    
 }
+
+@media (max-width: 780px){
+    .statistics .stat-box {flex-basis: 45%;}
+}
+
+@media (max-width: 730px){
+    .statistics .stat-box {flex-basis: 50%;}
+}
+
+@media (max-width: 600px){
+    .statistics .stat-box {flex-basis: 100%;}
+}
+
 
 .statistics .stat-box i { 
     position: relative;
@@ -775,13 +798,25 @@ video{
 .skills {
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
-    /* margin-inline: 20px; */
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
     
+    
 }
+
+
+.skills > div h4{
+    font-weight: normal;
+}
+
+
+.skills > div > p {
+    color: #777;
+}
+
 .skills .testimonials-part {
-padding-inline: 5rem;
+    padding-inline: 5rem;
+    position: relative;
 
 }
 
@@ -792,18 +827,18 @@ padding-inline: 5rem;
     margin-bottom: 50px;
 }
 
-.skills .testimonials-part .text h4{ font-weight: normal;}
-
-.skills .testimonials-part .text p{color: #777;}
 
 .skills .testimonials-part .account {
     display: flex;
-    position: relative;
+    margin-bottom: 10px;
+    
 }
 
-.skills .testimonials-part .account p:first-child{
+.skills .testimonials-part > .account p:nth-child(2){
     flex: 1;
-   
+    border-bottom: 1px #777 solid;
+    line-height: 1.5;
+    padding: 5px;
     
 }
 
@@ -814,36 +849,31 @@ padding-inline: 5rem;
     border-radius: 50%;
 }
 
-.skills .testimonials-part .account p:last-child{
+.skills .testimonials-part .account p:nth-child(3){
     position: absolute;
     right: 0;
-    bottom: -20px;
+    bottom: 0px;
     color: #777;
+    
 }
 
-.skills .testimonials-part hr {
 
-    width: 70%;
-    margin-left: 30%;
-    
-
-}
-
-.skills .testimonials-part .account .bullits{
-    
-    margin-top: 50px;
+.skills .testimonials-part .bullits{
+   
     width: 5rem;
     display: flex;
     gap: 2px;
+    
    
 }
 
-.skills .testimonials-part .account .bullits span{ 
+.skills .testimonials-part .bullits span{ 
     width: 10px; height: 10px;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
-    border:1px solid black;
+    border: #777 1px solid;
+
 
 }
 
@@ -858,12 +888,6 @@ padding-inline: 5rem;
     margin-bottom: 50px;
 
 }
-
-.skills .skills-part h4 {
-    font-weight: normal;
-}
-
-.skills .skills-part p { color: #777;}
 
 .skills .skills-part .abobe {
     
@@ -891,3 +915,266 @@ padding-inline: 5rem;
 
 
 /*E-Skills*/
+
+/*S-Quote*/
+
+.Quote {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background-image: url("quote.jpg");
+    background-size: cover;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.Quote::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,70%);
+    
+
+}
+
+.Quote blockquote {
+    font-size: 2rem;
+    width: 80%;
+    position: relative;
+    margin-inline: auto;
+    
+}
+
+.Quote p {
+    font-size: 1.1rem;
+    position: relative;
+}
+
+
+
+
+/*E-Quote*/
+
+/*S-Pricing*/
+
+.pricing {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+
+}
+
+.pricing .content {
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 85%;
+    
+    
+} 
+
+.pricing .content ul {
+    flex: 1 25%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+}
+
+.pricing .content ul:not(:last-child) {
+    border-right:20px white solid ;
+}
+
+.pricing .content ul > li:first-of-type {
+    flex-basis: 30%;
+    
+}
+
+.pricing .content ul > li:first-of-type{
+    content: "";
+}
+
+.pricing .content ul > li:first-of-type span:first-child{
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left:70px;
+
+}
+
+.pricing .content ul > li:first-of-type span:last-child{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.pricing .content ul li{
+    font-weight: normal;
+    text-align: center;
+    padding:20px 0 20px ;
+    position: relative;
+
+}
+
+.pricing .content ul li::after :not(li:first-child){
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--main-color);
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    
+}
+
+.pricing .content ul > li:first-of-type h1{
+
+    font-size: 3rem;
+    position: relative;
+    border-top: 1px var(--main-padding) solid;
+    border-bottom: 1px var(--main-padding) solid;
+}
+
+.pricing .content button {
+    height: 60px;
+    width: 40%;
+    align-self: center;
+    border: 1px var(--main-color)solid;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.pricing .contact-msg   {
+    text-align: center;  
+}
+.pricing .contact-msg p  {
+    font-weight: normal;
+    font-size: 1.1rem;
+}
+
+.pricing .contact-msg button  {
+    height: 50px;
+    padding: 15px 20px ;
+    text-transform: uppercase;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+
+
+/*E-Pricing*/
+
+
+
+/*S-Subscribe*/
+
+.subscribe {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    background: url("subscribe.jpg") ;
+    background-size: cover;
+    color: white;
+
+
+}
+
+.subscribe .container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* @media (max-width:767px){
+    .subscribe .container{
+        flex-direction: column;
+    
+}
+} */
+
+.subscribe input {
+    background: transparent;
+    border: 2px white solid;
+    position: relative;
+    height: 4rem;
+    border-right: none;
+    padding-left: 20px;
+    width: 30%;
+
+}
+
+.subscribe input::placeholder {
+
+    color: white;
+    font-size: 1.1rem;
+    
+    
+
+}
+
+
+.subscribe .container + i {
+
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    font-size: 100px;
+    color: red;
+}
+
+.subscribe .sub-btn {
+
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: var(--main-color);
+    padding: 20px 20px;
+    height: 4rem;
+    border: 2px white solid;
+    border-left: none;
+    outline: none;
+    color: white;
+
+}
+
+.subscribe .sub-btn:focus-visible {
+    outline: none;
+
+}
+
+.subscribe p {
+    flex: 1;
+    font-size: 1.1rem;
+    margin: 0 50px;
+    line-height: 2;
+}
+
+
+
+
+
+
+/*E-Subscribe*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
