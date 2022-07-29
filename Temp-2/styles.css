@@ -195,13 +195,12 @@ header #search-icon:hover+.search-bar{
                     /*head*/
 
                 /*landing SEc*/
-.landing {
+body #land {
     position: relative;
-    min-height: 100vh;
     background-image: url("owl-night-wildlife-predatory-bird-strigiformes.jpg");
     background-size: cover;
     background-color: rgb(15, 14, 14);
-    
+    height: 100vh;
 
     
 }
@@ -224,7 +223,7 @@ header #search-icon:hover+.search-bar{
     font-size: 1.2em;
     width: 50%;
     transform: translateY(-50%);
-    padding: 1.5em;
+    padding: 1.5rem 3rem;
     color: white;
     display: flex;
     justify-content: flex-end;
@@ -324,6 +323,7 @@ header #search-icon:hover+.search-bar{
     width: 30rem;
     margin:inherit ;
     max-width: 100%;
+    padding-inline: 5px;
 }
 
   .hd{
@@ -338,25 +338,25 @@ header #search-icon:hover+.search-bar{
 
     content: "";
     position: absolute;
-    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: black;
-    width: 7rem;
     height: 2px;
+    background-color: #333;
+    bottom: -30px;
+    width: 120px;
 }
 
  .hd::after{
 
     content: "";
     position: absolute;
-    bottom: -23px;
-    left: 58%;
-    transform: translateX(-50px);
-    width: 15px;
-    height: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    border: 2px black solid;
+    border: 2px solid #333;
+    bottom: -38px;
     background-color: white;
 }
 .hd-par {
@@ -505,7 +505,7 @@ header #search-icon:hover+.search-bar{
     margin: 0;
     padding: 0;
     margin-bottom: 50px;
-    
+    gap:2px;
 }
 
 .portfolio .shuffle li{
@@ -660,6 +660,7 @@ video{
     background-color: var(--transperant-color);
     padding-top: 45px;
     padding-bottom: 45px;
+    max-height: 100%;
     
 }
 
@@ -816,29 +817,36 @@ video{
 
 .skills .testimonials-part {
     padding-inline: 5rem;
-    position: relative;
+    position: relative  !important; 
 
 }
 
 .skills .testimonials-part .text{
 
     font-weight: normal;
-    text-align: center;
     margin-bottom: 50px;
+    text-align: center;
+    line-height: 2;
 }
 
+.skills .testimonials-part .text h4{ font-size: 1.5rem;  }
+.skills .testimonials-part .text p{ color: #777; }
 
 .skills .testimonials-part .account {
-    display: flex;
-    margin-bottom: 10px;
     
+    margin-bottom: 10px;
+    display: flex;
+   
 }
 
-.skills .testimonials-part > .account p:nth-child(2){
-    flex: 1;
+.skills .testimonials-part .account-info {
     border-bottom: 1px #777 solid;
-    line-height: 1.5;
-    padding: 5px;
+    flex: 1;
+}
+
+.skills .testimonials-part > .account p:first-child{
+    line-height: 2;
+    margin: 0;
     
 }
 
@@ -849,20 +857,18 @@ video{
     border-radius: 50%;
 }
 
-.skills .testimonials-part .account p:nth-child(3){
-    position: absolute;
-    right: 0;
-    bottom: 0px;
+.skills .testimonials-part > .account .name{
+    text-align: right;
     color: #777;
-    
 }
 
 
 .skills .testimonials-part .bullits{
-   
+    position: absolute;
+    bottom: 70px;
     width: 5rem;
     display: flex;
-    gap: 2px;
+    justify-content: space-around;
     
    
 }
@@ -877,7 +883,20 @@ video{
 
 }
 
+@media (max-width:767px){
+    .skills .account  {
+        flex-direction: column;
+    }
+    .skills .testimonials-part .bullits{
+        bottom: -20px;
+    }
 
+    .skills .testimonials-part .account img{margin:10px auto 20px; }
+
+    .skills .testimonials-part {width: 100%;  text-align: center;}
+
+   
+}
 .skills .skills-part {
     padding-inline: 5rem;
 }
@@ -886,32 +905,58 @@ video{
 
     text-align: center;
     margin-bottom: 50px;
-
-}
-
-.skills .skills-part .abobe {
     
-    height: 20px;
-    background: linear-gradient(to right ,var(--main-color) 90%, #777 90%);
+
 }
 
-.skills .skills-part .html-css {
-    
-    height: 20px;
-    background: linear-gradient(to right ,var(--main-color) 85%, #777 85%);
+@media (max-width:767px) {
+    .skills .skills-part .text {
+        margin-top: 80px;
+    }
 }
 
-.skills .skills-part .javascript {
-    
-    height: 20px;
-    background: linear-gradient(to right ,var(--main-color) 80%, #777 80%);
+.skills .skills-part .text h4{font-size: 1.5rem; text-transform: uppercase;}
+.skills .skills-part .text p{color: #777; line-height: 2;}
+
+.skills .skills-container h4 {
+    font-size:1.2rem ;
 }
 
-.skills .skills-part .python {
+.skills .skills-container div {
     
-    height: 20px;
-    background: linear-gradient(to right ,var(--main-color) 90%, #777 90%);
+    height: 30px;
+    background: #777;
 }
+
+.skills .skills-container div span {
+    background-color: var(--main-color);
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.skills .skills-container div span::before {
+    content: attr(data-progress);
+    position: absolute;
+    top: -36px;
+    right: -15px;
+    background-color: black;
+    padding: 5px 0;
+    color: white;
+    border-radius: 10%;
+
+}
+
+.skills .skills-container div span::after {
+    
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: -7px;
+    border: 8px solid;
+    border-color:  black transparent transparent transparent;
+}
+
 
 
 /*E-Skills*/
@@ -940,7 +985,7 @@ video{
 
 }
 
-.Quote blockquote {
+.Quote q {
     font-size: 2rem;
     width: 80%;
     position: relative;
@@ -966,43 +1011,39 @@ video{
 
 }
 
-.pricing .content {
+.pricing .plans {
     margin: 50px auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 85%;
-    
-    
-} 
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 30px;
+    width: 95%;
+}
 
-.pricing .content ul {
-    flex: 1 25%;
+
+
+.pricing .plans ul {
+   
     margin: 0;
     padding: 0;
     list-style: none;
     background-color: #eee;
     display: flex;
     flex-direction: column;
-    
+   
     
     
 }
 
-.pricing .content ul:not(:last-child) {
-    border-right:20px white solid ;
+
+
+
+
+.pricing .plans ul > li:first-of-type{
+    border-bottom: 1px var(--main-color) solid;
+    border-top: 1px var(--main-color) solid;
 }
 
-.pricing .content ul > li:first-of-type {
-    flex-basis: 30%;
-    
-}
-
-.pricing .content ul > li:first-of-type{
-    content: "";
-}
-
-.pricing .content ul > li:first-of-type span:first-child{
+.pricing .plans ul > li:first-of-type span:first-child{
     font-size: 20px;
     position: absolute;
     top: 0;
@@ -1010,46 +1051,46 @@ video{
 
 }
 
-.pricing .content ul > li:first-of-type span:last-child{
+.pricing .plans ul > li:first-of-type span:last-child{
     font-size: 20px;
     margin-left: 10px;
 }
 
-.pricing .content ul li{
+.pricing .plans ul li{
     font-weight: normal;
     text-align: center;
     padding:20px 0 20px ;
     position: relative;
 
 }
-
-.pricing .content ul li::after :not(li:first-child){
+.pricing .plans ul li:not(:first-child)::after {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 1px;
-    background-color: var(--main-color);
     bottom: 0;
-    left: 0;
-    z-index: 2;
-    
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    background-color: var(--main-color);
+    height: 1px;
 }
 
-.pricing .content ul > li:first-of-type h1{
+
+
+.pricing .plans ul > li:first-of-type h1{
 
     font-size: 3rem;
     position: relative;
-    border-top: 1px var(--main-padding) solid;
-    border-bottom: 1px var(--main-padding) solid;
+    
 }
 
-.pricing .content button {
+.pricing .plans button {
     height: 60px;
     width: 40%;
     align-self: center;
     border: 1px var(--main-color)solid;
     font-size: 1rem;
     font-weight: 500;
+    margin: 20px 0;
 }
 
 .pricing .contact-msg   {
@@ -1073,6 +1114,7 @@ video{
 }
 
 
+
 /*E-Pricing*/
 
 
@@ -1085,6 +1127,7 @@ video{
     background: url("subscribe.jpg") ;
     background-size: cover;
     color: white;
+    /* position: relative; */
 
 
 }
@@ -1094,25 +1137,20 @@ video{
     flex-wrap: wrap;
 }
 
-/* @media (max-width:767px){
-    .subscribe .container{
-        flex-direction: column;
-    
-}
-} */
 
-.subscribe input {
+
+.subscribe [type="email"] {
     background: transparent;
     border: 2px white solid;
     position: relative;
     height: 4rem;
     border-right: none;
-    padding-left: 20px;
+    padding-left: 50px;
     width: 30%;
 
 }
 
-.subscribe input::placeholder {
+.subscribe [type="email"]::placeholder {
 
     color: white;
     font-size: 1.1rem;
@@ -1121,6 +1159,11 @@ video{
 
 }
 
+.subscribe i{
+    position: relative;
+    top:30px;
+    left: 40px;
+}
 
 .subscribe .container + i {
 
@@ -1145,8 +1188,9 @@ video{
 
 }
 
-.subscribe .sub-btn:focus-visible {
-    outline: none;
+.subscribe .container [type="email"]:focus {
+   outline: none;
+   caret-color:var(--main-color) ;
 
 }
 
@@ -1158,16 +1202,188 @@ video{
 }
 
 
+@media (max-width:767px){
 
+    .subscribe i{
+        position: relative;
+        left: -170px;
+    }
+    
+
+    .subscribe .container{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        
+    }
+    .subscribe .container [type="email"] {
+        width: 90%;
+        border-right:2px white solid ;
+    }
+    .subscribe .container .sub-btn{
+        margin-top: 5px;
+       border-left: 2px white solid;
+       width: 90%;
+    
+}
+
+}
 
 
 
 /*E-Subscribe*/
 
+/*S-Contact*/
+
+.contact-us {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+
+}
+
+.contact-us .content {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+
+.contact-us form {
+    flex: 1 ;
+    position: relative;
+}
+
+.contact-us input:not(:last-child), textarea {
+    display: block;
+    width: 90%;
+    height: 60px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.contact-us input:not(:last-child):focus, textarea:focus {
+    outline: none;
+}
+
+.contact-us textarea {
+    height: 200px;
+    padding: 10px;
+}
+
+.contact-us input::placeholder, textarea::placeholder {
+    font-size: 1.1rem;
+}
+
+.contact-us form [type="submit"]{
+    color: white;
+    padding: 20px 20px;
+    background-color: var(--main-color);
+    border: none;
+    font-size: 1rem;
+    position: absolute;
+    right: 10%;
+}
+
+.contact-us .content .info h3 {
+    font-weight: normal;
+
+}
+
+.contact-us .content .info .phones{
+    margin-bottom: 30%;
+}
+
+.contact-us .content .info span {
+    display: block;
+    color: #777;
+}
+
+@media (max-width:767px) {
+    .contact-us .content {
+        justify-content: space-around;
+        gap: 80px;
+
+    }
+
+    .contact-us .content form{
+        flex: 90%;
+    }
+
+    .contact-us .content form > *{
+        margin-inline:auto;
+    }
+
+    .contact-us .content  [type="submit"]{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+   
+
+}
+
+
+
+/*E-Contact*/
+
+
+/*Footer*/
+
+footer {
+    background: url("subscribe.jpg") ;
+    background-size: cover;
+    position: relative;
+    padding-top: calc(var(--main-padding)/2);
+    padding-bottom: calc(var(--main-padding)/2);
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,50%);
+}
+
+footer .container {
+    position: relative;
+    margin-inline: auto;
+    color: white;
+    font-weight: normal;
+    text-transform:uppercase ;
+    text-align: center;
+
+}
 
 
 
 
+footer .container h2{
+     font-weight: normal;
+    border-bottom:2px white solid ;
+    width: fit-content;
+    margin-inline: auto;
+    padding: 20px 0;
+}
+
+footer .container i{
+    padding: 20px;
+}
+
+footer .container p {
+    margin-top: 100px;
+    text-transform: none;
+}
+
+footer .container p span{
+    color: var(--main-color);
+    font-size: 1.1rem;
+}
+
+/*Footer*/
 
 
 

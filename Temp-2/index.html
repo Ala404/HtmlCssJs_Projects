@@ -29,17 +29,17 @@
             </ul>
             <div class="form">
                 <i class="fas fa-search" id="search-icon"></i>
-                <!-- <input class="search-bar" type="text" placeholder="search"> -->
             </div>
                 
         </nav>
     </div>
 
 </header>
+
           <!--E-Header-->    
           
          <!-- S-landing-->
-        <div class="landing">
+        <div class="landing" id="land">
           <div class="overlay"></div>
           <div class="text">
             <div class="content">
@@ -235,20 +235,25 @@
                 </div>
                 <div class="account">
                     <img src="skills-01.jpg" alt="skills-01">
-                    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
-                        <p>John Doe, CEO</p>
-                    </p>
-                    
+                    <div class="account-info">
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                        
+                        </p>
+                        <p class="name">John Doe, CEO</p>
+                        
+                    </div>
                     
                 </div>
                 
                 <div class="account">
                     <img src="skills-02.jpg" alt="skills-01">
-                    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
-                        <p>John Doe, CEO</p>
-
-                    </p>
-
+                    <div class="account-info">
+                        <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                        
+                        </p>
+                        <p class="name">John Doe, CEO</p>
+                        
+                    </div>
                     </div>
                     
 
@@ -269,17 +274,20 @@
                     <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
                 </div>
 
-                <h4>abobe</h4>
-                <div class="abobe"></div>
-
-                <h4>html&css</h4>
-                <div class="html-css"></div>
-
-                <h4>javascript</h4>
-                <div class="javascript"></div>
-
-                <h4>python</h4>
-                <div class="python"></div>
+                <div class="skills-container">
+                    <h4>abobe</h4>
+                    <div class="abobe"><span style="width: 90%;" data-progress="90%"></span></div>
+    
+                    <h4>html&css</h4>
+                    <div class="html-css"><span style="width: 85%;" data-progress="85%"></span></div>
+    
+                    <h4>javascript</h4>
+                    <div class="javascript"><span style="width: 80%;" data-progress="80%"></span></div>
+    
+                    <h4>python</h4>
+                    <div class="python"><span style="width: 90%;" data-progress="90%"></span></div>
+                </div>
+       
 
               
         </section>
@@ -293,9 +301,9 @@
 
         <section class="Quote">
 
-            <blockquote>
-                "accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt."
-            </blockquote>
+            <q>
+                accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+            </q>
             <p>John Doe</p>
         </section>
 
@@ -313,8 +321,8 @@
                 <p class="hd-par">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
                 </p>
                 </div>
-            </div>
-            <div class="content">
+            
+            <div class="plans">
             <ul class="basic">
                 <li><h3>basic</h3><h1><span>$</span>19<span>/MO</span></h1></li>
                 <li>Feature No 1</li>
@@ -351,6 +359,7 @@
                 <button>buy</button>
             </ul>
             </div>
+        </div>
                 <div class="contact-msg">
                     <p>Contact us if you have special request</p>
                     <button>Contact Us</button>
@@ -373,9 +382,9 @@
         <section class="subscribe">
             <div class="container">
 
-                <i></i>
-            <input type="text" placeholder="Your Email">
-            <button class="sub-btn">subscribe</button>
+                <i class="far fa-envelope fa-lg"></i>
+            <input type="email" placeholder="Your Email">
+            <input class="sub-btn" type="submit" value="subscribe" ></input>
             <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blan dit aliquet elit, eget tincidunt.</p>
             </div>
             
@@ -389,6 +398,68 @@
 
 
 
+
+
+        <!--S-Contact-->
+
+
+        <section class="contact-us" id="contact">
+            <div class="container">
+                
+                <div class="sec-heading">
+                    <h1 class="hd">Contact Us</h1>
+                <p class="hd-par">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                </p>
+                </div>
+
+                <div class="content">
+                    <form>
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <textarea placeholder="Your Message" ></textarea>
+                        <input type="submit" value="SEND MESSAGE">
+                    </form>
+                    <div class="info">
+                        <div class="phones">
+                        <h3>GET IN TOUCH</h3>
+                        <span>+00 123.456.789</span>
+                        <span>+00 123.456.789</span>
+                        </div>
+                        <div class="address">
+                            <h3>WHERE WE ARE</h3>
+                            <span>Awesome Address 17</span>
+                            <span>New York, NYC</span>
+                            <span>123-4567-890</span>
+                            <span>USA</span>
+                        </div>
+                       
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+
+
+        <!--E-Contact-->
+
+
+
+        <footer>
+            <div class="container">
+                <img src="logo booma.png" alt="logo">
+                <h2>we are social</h2>
+                <div class="social-media">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-house-chimney"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                </div>
+                
+
+                <p>© 2021 <span>Kasper</span> All Right Reserved</p>
+            </div>
+        </footer>
 
 
 
