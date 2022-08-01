@@ -1,0 +1,104 @@
+//Globlale rules
+
+    $rounded:true;
+    $bg-col:hsl(218, 23%, 16%);
+    $box-col:  hsl(217, 19%, 24%) ;
+    $txt-col: hsl(193, 38%, 86%);
+    $main-green:#53ffab;
+    $glow-green:hsl(150, 100%, 66%);
+    $point:mobile;
+
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+%center {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin  cercle($dimansions) {
+    width: $dimansions;
+    height: $dimansions;
+    border-radius: 50%;
+}
+
+
+.edvice-container {
+    @extend %center;
+    height: 100vh;
+    background-color: $bg-col;
+
+    .edvice-box {
+
+        background-color: $box-col;
+        width: 50%;
+        height: 200px;
+        padding: 20px 50px;
+        text-align: center;
+        border-radius: if($rounded,10px ,null);
+        position: relative;
+
+        small {
+            color: $main-green;
+            text-transform: uppercase;
+        }
+       
+        q{
+            color: $txt-col;
+            display: block;
+            position: relative;
+            padding: 50px 10px;
+
+         
+
+         
+        }
+
+        span {
+            
+            @include cercle(50px);
+            background-color: $main-green;
+            position: absolute;
+            left: 50%;
+            bottom: -45px;
+            transform: translate(-50%,-50%);
+
+            &:hover {
+                background-color: $glow-green;
+                cursor: pointer;
+                box-shadow: 0 0 1rem $glow-green;
+            }
+
+            &::before {
+                content: url("images/pattern-divider-desktop.svg");
+                position: absolute;
+                left: 50%;
+                top: -50px;
+                transform: translateX(-50%);
+            }
+
+            @if $point== mobile {
+                @media (max-width:767px) {
+                    &::before {
+                    content: url("images/pattern-divider-mobile.svg");}
+                }
+            }
+
+            &::after {
+                content: url(images/icon-dice.svg);
+                position: absolute;
+                left: 50%;
+                top: 55%;
+                transform: translate(-50%, -50%);
+                
+            }
+        }
+    }
+
+
+
+}
